@@ -1,0 +1,9 @@
+@charset "UTF-8";
+h1{
+	color: lightpink;
+	margin: 5% 0% 5% 0%;
+}
+
+.container{
+	font-family: sans-serif;
+}

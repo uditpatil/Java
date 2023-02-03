@@ -7,8 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 		
 	@RequestMapping("/")
-	public String index(Model model) {
-		model.addAttribute("fruit", "banana");
+	public String index() {
 		return "demo.jsp";
 	}
 
