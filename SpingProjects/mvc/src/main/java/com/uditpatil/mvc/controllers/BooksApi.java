@@ -42,8 +42,10 @@ public class BooksApi {
     		@RequestParam(value="description") String desc, 
     		@RequestParam(value="language") String lang,
     		@RequestParam(value="pages") Integer numOfPages) {
-        Book book = bookService.updateBook(id, title, desc, lang, numOfPages);
-        return book;
+        Book book = new Book(title, desc, lang, numOfPages);
+        book.setId(id);
+        Book updateBook = bookService.updateBook(book);
+        return updateBook;
     }
     
     @RequestMapping(value="/api/books/{id}", method=RequestMethod.DELETE)
@@ -52,5 +54,6 @@ public class BooksApi {
     }
 
 }
+
 
 

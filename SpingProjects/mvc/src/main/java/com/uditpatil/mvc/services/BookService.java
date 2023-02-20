@@ -34,7 +34,14 @@ public class BookService {
         }
     }
     
-    public Book updateBook(Long id) {
-    	
+    public Book updateBook(Book b) {
+    	return bookRepository.save(b);
+    }
+    
+    public void deleteBook(long id) {
+    	Optional<Book> optionalBook = bookRepository.findById(id);
+    	if(optionalBook.isPresent()) {
+    		bookRepository.deleteById(id);
+    	}
     }
 }
