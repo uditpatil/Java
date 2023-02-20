@@ -9,7 +9,7 @@
 <body>
 	<h1>Here's Your Omikuji</h1>
 	<h3 style="width: 50%;">
-		<c:out value="${result}"/>
+		<c:out value="${resultForm}"/>
 	</h3>
 	<a href="/omikuji">Go Back</a>
 </body>
