@@ -14,9 +14,25 @@
 </head>
 <body>
 	<div class="container">
-		<p>Test</p>
-		${book.title}
-		${books}
+		<h1>All Books</h1>
+		<table class="table table-bordered table-striped">
+			<tbody class="text-center">
+				<tr class="bordered">
+					<th>ID</th>
+					<th>Title</th>
+					<th>Language</th>
+					<th># Pages</th>
+				</tr>
+				<c:forEach var="book" items="${books}">
+					<tr class="bordered">
+						<td><c:out value="${book.id}"/></td>
+						<td><c:out value="${book.title}"/></td>
+						<td><c:out value="${book.description}"/></td>
+						<td><c:out value="${book.numberOfPages}"/></td>
+					</tr>
+				</c:forEach>
+			</tbody>
+		</table>	
 	</div>
 	<!-- For any Bootstrap that uses JS or jQuery-->
 	<script src="/webjars/jquery/jquery.min.js"></script>

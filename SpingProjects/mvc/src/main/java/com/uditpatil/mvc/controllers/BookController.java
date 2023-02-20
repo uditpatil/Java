@@ -22,10 +22,15 @@ public class BookController {
 		
 		Book book = bookService.findBook(bookId);
 		model.addAttribute("book", book);
-		System.out.println(book.getDescription());
-		System.out.println(book.getLanguage());
-		System.out.println(book.getTitle());
-		System.out.println(book.getNumberOfPages());
 		return "show.jsp";
 	}
+	
+	@GetMapping("/books")
+	public String index(Model model) {
+		List<Book> books = bookService.allBooks();
+		model.addAttribute("books", books);
+		return "index.jsp";
+	}
+	
+	
 }
