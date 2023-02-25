@@ -28,7 +28,7 @@
 		</div>
 		<div>
 			<label for="">Enter any type of living thing</label><br />
-			<input type="text" name="livingthing"/>
+			<input type="text" name="livingThing"/>
 		</div>
 		<div>
 			<label for="">Say something nice to someone:</label><br />
