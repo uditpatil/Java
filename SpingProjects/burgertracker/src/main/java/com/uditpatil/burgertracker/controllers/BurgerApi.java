@@ -29,5 +29,23 @@ public class BurgerApi {
         Burger burger = new Burger(burgerName, restaurantName, rating, notes);
         return burgerService.addBurger(burger);
     }
+    
+    @RequestMapping("/api/burgers/{id}/edit")
+    public Burger show(@PathVariable("id") Long id) {
+        Burger burger = burgerService.findBurger(id);
+        return burger;
+    }
 	
+    @RequestMapping(value="/api/burgers/{id}/edit", method=RequestMethod.PUT)
+    public Burger update(
+    		@PathVariable("id") Long id, 
+    		@RequestParam(value="burgerName") String burgerName, 
+    		@RequestParam(value="restaurantName") String restaurantName, 
+    		@RequestParam(value="rating") Integer rating,
+    		@RequestParam(value="notes") String notes) {
+        Burger burger = new Burger(burgerName, restaurantName, rating, notes);
+        burger.setId(id);
+        Burger updateBurger = burgerService.updateBurger(burger);
+        return updateBurger;
+    }
 }
